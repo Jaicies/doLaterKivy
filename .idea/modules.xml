@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/doLaterKivy.iml" filepath="$PROJECT_DIR$/.idea/doLaterKivy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../remind-me-bot/.idea/remind-me-bot.iml" filepath="$PROJECT_DIR$/../remind-me-bot/.idea/remind-me-bot.iml" />
     </modules>
   </component>
 </project>
