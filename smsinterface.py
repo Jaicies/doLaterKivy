@@ -3,7 +3,8 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.lang import Builder
 from kivy.properties import StringProperty
-
+from textScheduler import send_sms_message
+from twilio.rest import Client
 from plyer import sms
 
 Builder.load_string('''
@@ -42,7 +43,8 @@ class IntentButton(Button):
     sms_message = StringProperty()
 
     def send_sms(self, *args):
-        sms.send(recipient=self.sms_recipient, message=self.sms_message)
+        #sms.send(recipient=self.sms_recipient, message=self.sms_message)
+        send_sms_message(messages=self.sms_message, cellphoneNum=self.sms_recipient)
 
 
 class SmsApp(App):
@@ -55,4 +57,5 @@ class SmsApp(App):
 
 if __name__ == "__main__":
     SmsApp().run()
+
 
