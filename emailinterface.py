@@ -24,16 +24,10 @@ Builder.load_string('''
             text: 'text'
         TextInput:
             id: text
-    BoxLayout:
-        Label:
-            text: 'create chooser?'
-        CheckBox:
-            id: create_chooser
     IntentButton:
         email_recipient: recipient.text
         email_subject: subject.text
         email_text: text.text
-        create_chooser: create_chooser.active
         text: 'Send email'
         size_hint_y: None
         height: sp(40)
@@ -49,13 +43,12 @@ class IntentButton(Button):
     email_recipient = StringProperty()
     email_subject = StringProperty()
     email_text = StringProperty()
-    create_chooser = BooleanProperty()
 
     def send_email(self, *args):
         email.send(recipient=self.email_recipient,
                    subject=self.email_subject,
                    text=self.email_text,
-                   create_chooser=self.create_chooser)
+                   create_chooser=False)
 
 
 class EmailApp(App):
